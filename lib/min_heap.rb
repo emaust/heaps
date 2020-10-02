@@ -55,15 +55,15 @@ class MinHeap
   end
 
   # This method returns true if the heap is empty
-  # Time complexity: ?
-  # Space complexity: ?
+  # Time complexity: O(1)
+  # Space complexity: O(1)
   def empty?
     if @store[0].nil? || @store.empty?
       return true
     end
 
     return false
-    
+
   end
 
   private
