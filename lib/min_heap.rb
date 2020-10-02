@@ -1,4 +1,3 @@
-require 'pry'
 
 class HeapNode
   attr_reader :key, :value
@@ -16,8 +15,8 @@ class MinHeap
   end
 
   # This method adds a HeapNode instance to the heap
-  # Time Complexity: ?
-  # Space Complexity: ?
+  # Time Complexity: O(n)
+  # Space Complexity: O(1)
   def add(key, value = key)
     
     @store.push(HeapNode.new(key,value))
@@ -28,8 +27,8 @@ class MinHeap
 
   # This method removes and returns an element from the heap
   #   maintaining the heap structure
-  # Time Complexity: ?
-  # Space Complexity: ?
+  # Time Complexity: O(n)
+  # Space Complexity: O(1)
   def remove()
 
     swap(0, @store.length - 1)
@@ -59,7 +58,12 @@ class MinHeap
   # Time complexity: ?
   # Space complexity: ?
   def empty?
-    return false unless @store[0].nil?
+    if @store[0].nil? || @store.empty?
+      return true
+    end
+
+    return false
+    
   end
 
   private
@@ -67,8 +71,8 @@ class MinHeap
   # This helper method takes an index and
   #  moves it up the heap, if it is less than it's parent node.
   #  It could be **very** helpful for the add method.
-  # Time complexity: ?
-  # Space complexity: ?
+  # Time complexity: O(n)
+  # Space complexity: O(1)
   def heap_up(index)
 
     parent = (index - 2) / 2 if index.even?

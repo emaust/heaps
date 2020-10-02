@@ -59,6 +59,7 @@ describe "Heap" do
    heap.add(0, "Donuts")
    heap.add(16, "Cookies")
    heap.add(57, "Cake")
+   
 
    # Act
    removed = heap.remove
